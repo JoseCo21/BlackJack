@@ -1,16 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="di.blackjack.BlackJackControlador">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="di.blackjack.BlackJackControlador">
+    <VBox alignment="CENTER">
+        <children>
+            <AnchorPane fx:id="ordenador" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+                <VBox.margin>
+                    <Insets bottom="50.0" />
+                </VBox.margin>
+            </AnchorPane>
+            <Label fx:id="npcPuntuacion" minHeight="40.0" style="-fx-background-color: white; -fx-border-color: black; -fx-label-padding: 10;" text="Puntuacion npc">
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin>
+            </Label>
+        </children>
+        <VBox.margin>
+            <Insets />
+        </VBox.margin>
+    </VBox>
+    <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+        <children>
+            <VBox fx:id="pedirBox" alignment="CENTER">
+                <children>
+                    <Button fx:id="botonPedir" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#cartaJugador" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: black;" text="Pedir" textFill="#0ec8e1">
+                        <VBox.margin>
+                            <Insets right="80.0" />
+                        </VBox.margin>
+                        <font>
+                            <Font name="Arial Bold Italic" size="30.0" />
+                        </font></Button>
+                </children>
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+            </VBox>
+            <VBox fx:id="opciones" alignment="CENTER">
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+            </VBox>
+            <VBox fx:id="pararBox" alignment="CENTER">
+                <children>
+                    <Button fx:id="botonParar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#terminarTurno" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: black;" text="Parar" textFill="#e80909">
+                        <VBox.margin>
+                            <Insets left="80.0" />
+                        </VBox.margin>
+                        <font>
+                            <Font name="Arial Bold Italic" size="30.0" />
+                        </font></Button>
+                </children>
+            </VBox>
+        </children>
+        <VBox.margin>
+            <Insets bottom="40.0" top="40.0" />
+        </VBox.margin>
+    </HBox>
+    <VBox alignment="CENTER">
+        <children>
+            <Label fx:id="tuPuntuacion" minHeight="40.0" style="-fx-background-color: white; -fx-border-color: black; -fx-label-padding: 10;" text="Tu puntuacion">
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin></Label>
+            <AnchorPane fx:id="jugador" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+                <opaqueInsets>
+                    <Insets />
+                </opaqueInsets>
+                <HBox.margin>
+                    <Insets />
+                </HBox.margin>
+                <VBox.margin>
+                    <Insets top="50.0" />
+                </VBox.margin>
+            </AnchorPane>
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <Label fx:id="intentos" minHeight="40.0" style="-fx-background-color: white; -fx-border-color: black; -fx-label-padding: 10;" text="Intentos" />
+            </children>
+         </HBox>
+        </children>
+    </VBox>
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
     </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
 </VBox>
