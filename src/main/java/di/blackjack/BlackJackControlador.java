@@ -9,8 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -125,12 +124,20 @@ public class BlackJackControlador implements Initializable {
         iconoPlay.setPreserveRatio(true);
         iconoPlay.setFitHeight(40);
 
+        BorderStroke estilos = new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3));
+
         opciones.getChildren().add(botonPlay);
         botonPlay.setGraphic(iconoPlay);
         botonPlay.setText("Jugar");
         botonPlay.setFont(Font.font("Arial", FontWeight.BOLD,30));
         botonPlay.setContentDisplay(ContentDisplay.RIGHT);
         botonPlay.setOnMouseClicked(event -> iniciarPartida());
+        botonPlay.setBackground(Background.fill(Color.FORESTGREEN));
+        botonPlay.setBorder(new Border(estilos));
+        botonPlay.setTextFill(Color.WHITE);
+
+
+
 
         //Se oculta toda la información y botones de juego
 
@@ -316,6 +323,8 @@ public class BlackJackControlador implements Initializable {
         iconoPlay.setPreserveRatio(true);
         iconoPlay.setFitHeight(40);
 
+        BorderStroke estilos = new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3));
+
         opciones.getChildren().addAll(botonPlay, salir);
         opciones.setSpacing(30);
         salir.setGraphic(iconoRestart);
@@ -326,6 +335,9 @@ public class BlackJackControlador implements Initializable {
             mostrarOpciones();
             contador = 5;
         });
+        salir.setBackground(Background.fill(Color.RED));
+        salir.setBorder(new Border(estilos));
+        salir.setTextFill(Color.WHITE);
 
         botonPlay.setText("Jugar de nuevo");
         botonPlay.setVisible(true);

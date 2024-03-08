@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="di.blackjack.BlackJackControlador">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #006600;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="di.blackjack.BlackJackControlador">
     <VBox alignment="CENTER">
         <children>
             <AnchorPane fx:id="ordenador" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
@@ -16,7 +16,7 @@
                     <Insets bottom="50.0" />
                 </VBox.margin>
             </AnchorPane>
-            <Label fx:id="npcPuntuacion" minHeight="40.0" style="-fx-background-color: white; -fx-border-color: black; -fx-label-padding: 10;" text="Puntuacion npc">
+            <Label fx:id="npcPuntuacion" minHeight="40.0" style="-fx-background-color: black; -fx-border-color: white; -fx-label-padding: 10; -fx-border-width: 3; -fx-background-radius: 15; -fx-border-radius: 10;" text="Puntuacion npc" textFill="WHITE">
                 <VBox.margin>
                     <Insets />
                 </VBox.margin>
@@ -30,7 +30,7 @@
         <children>
             <VBox fx:id="pedirBox" alignment="CENTER">
                 <children>
-                    <Button fx:id="botonPedir" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#cartaJugador" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: black;" text="Pedir" textFill="#0ec8e1">
+                    <Button fx:id="botonPedir" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#cartaJugador" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: black; -fx-border-color: #48e848; -fx-border-width: 3; -fx-background-radius: 15; -fx-border-radius: 10;" text="Pedir" textFill="#48e848">
                         <VBox.margin>
                             <Insets right="80.0" />
                         </VBox.margin>
@@ -49,7 +49,7 @@
             </VBox>
             <VBox fx:id="pararBox" alignment="CENTER">
                 <children>
-                    <Button fx:id="botonParar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#terminarTurno" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: black;" text="Parar" textFill="#e80909">
+                    <Button fx:id="botonParar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#terminarTurno" prefHeight="90.0" prefWidth="180.0" style="-fx-background-color: black; -fx-border-color: red; -fx-border-width: 3; -fx-background-radius: 15; -fx-border-radius: 10;" text="Parar" textFill="#e80909">
                         <VBox.margin>
                             <Insets left="80.0" />
                         </VBox.margin>
@@ -65,7 +65,7 @@
     </HBox>
     <VBox alignment="CENTER">
         <children>
-            <Label fx:id="tuPuntuacion" minHeight="40.0" style="-fx-background-color: white; -fx-border-color: black; -fx-label-padding: 10;" text="Tu puntuacion">
+            <Label fx:id="tuPuntuacion" minHeight="40.0" style="-fx-background-color: black; -fx-border-color: black; -fx-label-padding: 10; -fx-border-color: white; -fx-border-width: 3; -fx-background-radius: 15; -fx-border-radius: 10;" text="Tu puntuacion" textFill="WHITE">
                 <VBox.margin>
                     <Insets />
                 </VBox.margin></Label>
@@ -82,7 +82,7 @@
             </AnchorPane>
          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
             <children>
-               <Label fx:id="intentos" minHeight="40.0" style="-fx-background-color: white; -fx-border-color: black; -fx-label-padding: 10;" text="Intentos" />
+               <Label fx:id="intentos" minHeight="40.0" style="-fx-background-color: black; -fx-border-color: cyan; -fx-label-padding: 10; -fx-border-width: 3; -fx-background-radius: 15; -fx-border-radius: 10;" text="Intentos" textFill="AQUA" />
             </children>
          </HBox>
         </children>
