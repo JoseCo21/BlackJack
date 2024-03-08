@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 import java.net.URL;
 import java.util.*;
@@ -56,6 +57,9 @@ public class BlackJackControlador implements Initializable {
     @FXML
     Button salir = new Button();
 
+    @FXML
+    Button reset = new Button();
+
     List<Carta> baraja;
     List<Carta> cartasOrdenador;
     List<Carta> cartasJugador;
@@ -67,6 +71,7 @@ public class BlackJackControlador implements Initializable {
 
 
     public void iniciarPartida() {
+
 
         //Se limpia todos los cambios de la partida anterior
         intentos.setText("Intentos: " + contador);
@@ -107,23 +112,23 @@ public class BlackJackControlador implements Initializable {
 
     public void mostrarOpciones() {
 
-        //Limpia el tablero
+        //Limpiamos el tablero
 
         limpiarTablero();
 
         //Se crean los botones de las opciones y se muestran
 
-        Image imagePlay = new Image(Objects.requireNonNull(getClass().getResourceAsStream("Misceláneo/play.png")));
+        Image imagePlay = new Image(Objects.requireNonNull(getClass().getResourceAsStream("imagenes/play.png")));
         ImageView iconoPlay = new ImageView();
 
         iconoPlay.setImage(imagePlay);
         iconoPlay.setPreserveRatio(true);
         iconoPlay.setFitHeight(40);
 
-        opciones.getChildren().addAll(botonPlay);
+        opciones.getChildren().add(botonPlay);
         botonPlay.setGraphic(iconoPlay);
         botonPlay.setText("Jugar");
-        botonPlay.setFont(Font.font("Stencil", 30));
+        botonPlay.setFont(Font.font("Arial", FontWeight.BOLD,30));
         botonPlay.setContentDisplay(ContentDisplay.RIGHT);
         botonPlay.setOnMouseClicked(event -> iniciarPartida());
 
@@ -160,20 +165,18 @@ public class BlackJackControlador implements Initializable {
 
     public void terminarTurno() {
 
-
-
         Alert ganador = new Alert(Alert.AlertType.INFORMATION);
         Alert perdedor = new Alert(Alert.AlertType.ERROR);
         Alert empate = new Alert(Alert.AlertType.CONFIRMATION);
 
         ganador.setTitle("GANADOR");
-        ganador.setHeaderText("Bien jugao. Maravillosa jugada");
+        ganador.setHeaderText("Maravillosa jugada");
         ganador.setContentText("Enhorabuena por la victoria");
         perdedor.setTitle("DERROTA");
-        perdedor.setHeaderText("A ber estudiao");
+        perdedor.setHeaderText("Lamento decirte que has perdido");
         perdedor.setContentText("Perdiste. Vuelve a intentarlo");
         empate.setTitle("EMPATE");
-        empate.setHeaderText("Esa no la vi venir");
+        empate.setHeaderText("Mala suerte. Vuelve a intentarlo");
         empate.setContentText("La banca gana");
 
         //Se voltea la primera carta de la máquina para comparar puntuaciones
@@ -299,20 +302,30 @@ public class BlackJackControlador implements Initializable {
 
         //Se muestra los botones que permiten reiniciar la partida o salir
 
-        Image imageRestart = new Image(Objects.requireNonNull(getClass().getResourceAsStream("Misceláneo/restart.png")));
+        Image imageRestart = new Image(Objects.requireNonNull(getClass().getResourceAsStream("imagenes/restart.png")));
         ImageView iconoRestart = new ImageView();
 
         iconoRestart.setImage(imageRestart);
         iconoRestart.setPreserveRatio(true);
         iconoRestart.setFitHeight(40);
 
-        opciones.getChildren().addAll(salir,botonPlay);
+        Image imagePlay = new Image(Objects.requireNonNull(getClass().getResourceAsStream("imagenes/play.png")));
+        ImageView iconoPlay = new ImageView();
+
+        iconoPlay.setImage(imagePlay);
+        iconoPlay.setPreserveRatio(true);
+        iconoPlay.setFitHeight(40);
+
+        opciones.getChildren().addAll(botonPlay, salir);
         opciones.setSpacing(30);
         salir.setGraphic(iconoRestart);
         salir.setText("Salir al menú");
-        salir.setFont(Font.font("Stencil", 30));
+        salir.setFont(Font.font("Arial", FontWeight.BOLD,30));
         salir.setContentDisplay(ContentDisplay.RIGHT);
-        salir.setOnMouseClicked(event -> mostrarOpciones());
+        salir.setOnAction(mouseEvent -> {
+            mostrarOpciones();
+            contador = 5;
+        });
 
         botonPlay.setText("Jugar de nuevo");
         botonPlay.setVisible(true);
